@@ -1,0 +1,16 @@
+## Metadata for  configuration
+## This metadata is used to augment the value.yaml to drive ICP UI for configuration of the Helm chart installation
+
+deploy:
+ __metadata:
+   name: "deploy"
+   label: "Deployment Target"
+   description: "Worker node placement to deploy to. Choose an explicit placement here to override it."
+   type: "string"
+   immutable: "false"
+   required: true
+   options:
+     - label: "local"
+       value: "local"
+     - label: "cloud"
+       value: "cloud"

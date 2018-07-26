@@ -1,0 +1,16 @@
+# Default values for nginx.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+deploy: local
+service:
+  url: demo.icp.cloud.com
+  name: demoliberty
+  type: NodePort
+  externalPort: 9080
+  internalPort: 9080
+  nodePort: 32233
+replicaCount: 2
+image:
+  repository: devops-demo
+  tag: 1.0.0
+  pullPolicy: IfNotPresent

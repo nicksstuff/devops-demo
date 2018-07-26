@@ -1,0 +1,43 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      nodeSelector:
+        placement: {{ .Values.deploy }}
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.internalPort }}
+          # the readiness probe details
+        readinessProbe:
+          httpGet: # make an HTTP request
+            port: 9080 # port to use
+            path: /demo/health # endpoint to hit
+            scheme: HTTP # or HTTPS
+          initialDelaySeconds: 90 # how long to wait before checking
+          periodSeconds: 3 # how long to wait between checks
+          successThreshold: 1 # how many successes to hit before accepting
+          failureThreshold: 3 # how many failures to accept before failing
+          timeoutSeconds: 3 # how long to wait for a response
+        # the livenessProbe probe details
+        livenessProbe:
+          httpGet: # make an HTTP request
+            port: 9080 # port to use
+            path: /demo/health # endpoint to hit
+            scheme: HTTP # or HTTPS
+          initialDelaySeconds: 90 # how long to wait before checking
+          periodSeconds: 3 # how long to wait between checks
+          successThreshold: 1 # how many successes to hit before accepting
+          failureThreshold: 3 # how many failures to accept before failing
+          timeoutSeconds: 3 # how long to wait for a response

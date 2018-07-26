@@ -1,0 +1,15 @@
+description: Simple Liberty Demo
+home: https://github.com/kubernetes/helm
+icon: https://github.com/niklaushirt/demoliberty/raw/master/charts/stable/icons/icp.png
+keywords:
+- http
+- nginx
+- www
+- web
+maintainers:
+- email: nikh@ch.ibm.com
+  name: Niklaus Hirt
+name: demoliberty
+sources:
+- https://github.com/niklaushirt/demoliberty
+version: 1.0.0
