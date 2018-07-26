@@ -4,7 +4,7 @@
  //----------------------------------------------------------------------------------------
  //  searchString:      String for Smoke Tests to be found on Example Web Page (Kubernetes Demo for Customer)
  //  webappUrl:         url for WebApp to test  (http://192.168.27.199:32333/demo/)
- //  gitlabProjectUrl:  url for GitLab Project   (http://192.168.27.199:30126/demo/libertydemo.git)
+ //  gitlabProjectUrl:  url for GitLab Project   (http://192.168.27.199:30126/demo/devops-demo.git)
  //
  //----------------------------------------------------------------------------------------
  //----------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ node {
      updateGitlabCommitStatus name: 'Build devops-demo:1.${BUILD_NUMBER}', state: 'running'
 
      // Adapt Demo Page
-     sh "sed -i 's/DevOps Demo/DevOps Demo - 1.${BUILD_NUMBER}/g'  ./src/main/webapp/index.html"
+     sh "sed -i 's/ - V 9.9.9/ - 1.${BUILD_NUMBER}/g'  ./src/main/webapp/index.html"
      sh "cat ./src/main/webapp/index.html"
 
      // Run the maven build
