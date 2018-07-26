@@ -2,7 +2,7 @@
  //----------------------------------------------------------------------------------------
  //  PARAMETERS
  //----------------------------------------------------------------------------------------
- //  searchString:      String for Smoke Tests to be found on Example Web Page (Kubernetes Demo for Customer)
+ //  searchString:      String for Smoke Tests to be found on Example Web Page (Demo for MyCustomer)
  //  webappUrl:         url for WebApp to test  (http://192.168.27.199:32333/demo/)
  //  gitlabProjectUrl:  url for GitLab Project   (http://192.168.27.199:30126/demo/devops-demo.git)
  //
