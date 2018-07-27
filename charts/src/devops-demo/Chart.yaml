@@ -9,7 +9,7 @@ keywords:
 maintainers:
 - email: nikh@ch.ibm.com
   name: Niklaus Hirt
-name: demoliberty
+name: devops-demo
 sources:
-- https://github.com/niklaushirt/demoliberty
+- https://github.com/niklaushirt/devops-demo
 version: 1.0.0

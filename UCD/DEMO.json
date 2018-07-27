@@ -1,0 +1,820 @@
+{
+    "name": "DEMO",
+    "description": "",
+    "enforceCompleteSnapshots": false,
+    "propSheet": {"properties": []},
+    "templatePropSheet": {
+        "name": "template",
+        "properties": []
+    },
+    "components": [{
+        "name": "DEMO",
+        "description": "",
+        "created": 1532521337006,
+        "componentType": "STANDARD",
+        "ignoreQualifiers": 0,
+        "importAutomatically": false,
+        "useVfs": true,
+        "active": true,
+        "deleted": false,
+        "defaultVersionType": "FULL",
+        "cleanupDaysToKeep": 0,
+        "cleanupCountToKeep": 0,
+        "sourceConfigPluginName": "File System (Versioned)",
+        "envPropDefs": [],
+        "resPropDefs": [],
+        "versionPropDefs": [{
+            "name": "jenkins.server",
+            "label": "jenkins.server",
+            "pattern": "",
+            "type": "TEXT",
+            "required": false,
+            "description": "",
+            "placeholder": ""
+        }],
+        "propSheetGroup": {"propSheets": [
+            {
+                "name": "template",
+                "properties": []
+            },
+            {
+                "name": "custom",
+                "properties": []
+            },
+            {
+                "name": "FileSystemVersionedComponentProperties",
+                "properties": [
+                    {
+                        "name": "basePath",
+                        "value": "\/Users\/nhirt\/TEMP\/SRC\/",
+                        "description": "",
+                        "secure": false
+                    },
+                    {
+                        "name": "excludes",
+                        "description": "",
+                        "secure": false
+                    },
+                    {
+                        "name": "extensions",
+                        "description": "",
+                        "secure": false
+                    },
+                    {
+                        "name": "includes",
+                        "description": "",
+                        "secure": false
+                    },
+                    {
+                        "name": "saveFileExecuteBits",
+                        "value": "false",
+                        "description": "",
+                        "secure": false
+                    }
+                ]
+            }
+        ]},
+        "processes": [{
+            "name": "deploy",
+            "description": "",
+            "defaultWorkingDir": "${p:resource\/work.dir}\/${p:component.name}",
+            "takesVersion": true,
+            "inventoryActionType": "ADD",
+            "status": "Active",
+            "configActionType": "ADD",
+            "active": true,
+            "path": "components\/164d163d-0b83-c1af-ac98-195cf9268230\/processes\/164d163d-11a6-fe9f-2592-aebe1733346d",
+            "deleted": false,
+            "propDefs": [],
+            "rootActivity": {
+                "edges": [
+                    {
+                        "to": "ENV",
+                        "from": "Replace Tokens",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "KUBE APPLY",
+                        "from": "Create Snapshot Of Environment",
+                        "type": "ALWAYS",
+                        "value": ""
+                    },
+                    {
+                        "to": "Download Artifacts",
+                        "from": "Delete Files and Directories",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "Replace Tokens",
+                        "from": "Download Artifacts",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "0c218be7e36069bc932d17d4399356",
+                        "from": "70715bf2b2d0defb27c4f515f9fe20",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "KUBE APPLY",
+                        "from": "ENV",
+                        "type": "VALUE",
+                        "value": ""
+                    },
+                    {
+                        "to": "Add Status to Version",
+                        "from": "KUBE APPLY",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "Create Snapshot Of Environment",
+                        "from": "ENV",
+                        "type": "VALUE",
+                        "value": "INT"
+                    },
+                    {
+                        "to": "Delete Files and Directories",
+                        "type": "ALWAYS",
+                        "value": ""
+                    },
+                    {
+                        "to": "70715bf2b2d0defb27c4f515f9fe20",
+                        "from": "Add Status to Version",
+                        "type": "SUCCESS",
+                        "value": ""
+                    }
+                ],
+                "offsets": [
+                    {
+                        "name": "Download Artifacts",
+                        "x": -132.2994069031255,
+                        "y": 310,
+                        "h": 110,
+                        "w": 440
+                    },
+                    {
+                        "name": "Create Snapshot Of Environment",
+                        "x": -357.8516808306184,
+                        "y": 790,
+                        "h": 110,
+                        "w": 630
+                    },
+                    {
+                        "name": "Delete Files and Directories",
+                        "x": -198.64970345156274,
+                        "y": 150,
+                        "h": 110,
+                        "w": 560
+                    },
+                    {
+                        "name": "KUBE APPLY",
+                        "x": 1.60133190878895,
+                        "y": 950,
+                        "h": 110,
+                        "w": 240
+                    },
+                    {
+                        "name": "ENV",
+                        "x": -145.1007251558293,
+                        "y": 630,
+                        "h": 110,
+                        "w": 530
+                    },
+                    {
+                        "name": "70715bf2b2d0defb27c4f515f9fe20",
+                        "x": -86.62228030050835,
+                        "y": 1270,
+                        "h": 70,
+                        "w": 370
+                    },
+                    {
+                        "name": "Add Status to Version",
+                        "x": -130.01047419585973,
+                        "y": 1110,
+                        "h": 110,
+                        "w": 480
+                    },
+                    {
+                        "name": "0c218be7e36069bc932d17d4399356",
+                        "x": 18.37771969949165,
+                        "y": 1390,
+                        "h": 100,
+                        "w": 160
+                    },
+                    {
+                        "name": "Replace Tokens",
+                        "x": -99.59881380625097,
+                        "y": 470,
+                        "h": 110,
+                        "w": 400
+                    }
+                ],
+                "layoutMode": "auto",
+                "type": "graph",
+                "name": "d6156a45-6c7d-4af0-a908-382c0f933fd5",
+                "children": [
+                    {
+                        "type": "finish",
+                        "name": "0c218be7e36069bc932d17d4399356",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 30,
+                        "commandName": "Download Artifacts",
+                        "pluginName": "UrbanCode Deploy Versioned File Storage",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "directoryOffset": ".",
+                            "artifactSetBaseDir": "",
+                            "fileIncludePatterns": "deploy_urbancode.yaml",
+                            "fileExcludePatterns": "",
+                            "syncMode": "true",
+                            "fullVerification": "true",
+                            "setFileExecuteBits": "false",
+                            "verifyFileIntegrity": "false",
+                            "versionId": "${p:version.id}",
+                            "serverUrl": "${p:server.url}",
+                            "compId": "${p:component.id}",
+                            "resId": "${p:resource.id}",
+                            "charset": "",
+                            "label": ""
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "Download Artifacts",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 64,
+                        "commandName": "Delete Files and Directories",
+                        "pluginName": "File Utils",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "baseDir": ".",
+                            "includes": "**\/*",
+                            "excludes": "",
+                            "followSymlinks": "false",
+                            "caseSensitive": "true"
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "Delete Files and Directories",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 9,
+                        "commandName": "Shell",
+                        "pluginName": "Shell",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "directoryOffset": ".",
+                            "shellInterpreter": "",
+                            "scriptBody": "kubectl apply -f deploy_urbancode.yaml",
+                            "runAsDaemon": "false",
+                            "outputFile": ""
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "KUBE APPLY",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 64,
+                        "commandName": "Replace Tokens",
+                        "pluginName": "File Utils",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "includes": "**\/deploy_urbancode.yaml",
+                            "excludes": "",
+                            "envPropValues": "${p:environment\/allProperties}",
+                            "propertyPrefix": "",
+                            "explicitTokens": "",
+                            "startDelimiter": "@",
+                            "endDelimiter": "@",
+                            "propFile": "replace_tokens.properties",
+                            "dir": "",
+                            "customEncoding": ""
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "Replace Tokens",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 78,
+                        "commandName": "Create Snapshot Of Environment",
+                        "pluginName": "UrbanCode Deploy Applications",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "application": "DEMO",
+                            "environment": "INT",
+                            "name": "DEMO_FOR_PROD_${p:version.name}",
+                            "description": ""
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "Create Snapshot Of Environment",
+                        "children": []
+                    },
+                    {
+                        "propertyName": "${p:environment.name}",
+                        "type": "switch",
+                        "name": "ENV",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 66,
+                        "commandName": "Add Status to Version",
+                        "pluginName": "UrbanCode Deploy Versions",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "status": "OK in ${p:environment.name}",
+                            "versionName": "${p:version.name}",
+                            "componentName": "${p:component.name}"
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "Add Status to Version",
+                        "children": []
+                    },
+                    {
+                        "status": "SUCCESS",
+                        "type": "setStatus",
+                        "name": "70715bf2b2d0defb27c4f515f9fe20",
+                        "children": []
+                    }
+                ]
+            }
+        }],
+        "configTemplates": [],
+        "genericProcesses": [],
+        "teamMappings": [],
+        "tags": [
+            {
+                "id": "164d7550-c994-69a5-7345-79974e5aa6a1",
+                "name": "DEMO APP",
+                "color": "#FDB813",
+                "description": "",
+                "objectType": "Component"
+            },
+            {
+                "id": "164d7554-6c75-d28e-65d7-b4ef50d1872e",
+                "name": "KUBERNETES",
+                "color": "#00B2EF",
+                "description": "",
+                "objectType": "Component"
+            },
+            {
+                "id": "164d755c-7ad9-798c-2cc0-784c1798f588",
+                "name": "WAS Liberty",
+                "color": "#17AF4A",
+                "description": "",
+                "objectType": "Component"
+            }
+        ]
+    }],
+    "environments": [
+        {
+            "name": "TEST",
+            "description": "",
+            "color": "#FDB813",
+            "requireApprovals": false,
+            "noSelfApprovals": false,
+            "exemptProcesses": [],
+            "lockSnapshots": false,
+            "requireSnapshots": false,
+            "cleanupDaysToKeep": 0,
+            "cleanupCountToKeep": 0,
+            "enableProcessHistoryCleanup": true,
+            "useSystemDefaultDays": true,
+            "historyCleanupDaysToKeep": 365,
+            "order": 2,
+            "active": true,
+            "propSheet": {"properties": [
+                {
+                    "name": "imageversion",
+                    "value": "1.${p:version.name}",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "ingressurl",
+                    "value": "test.demo.icp.cloud.com",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "kubename",
+                    "value": "mydemo-test",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "namespace",
+                    "value": "mydemo-test",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "nodeport",
+                    "value": "32330",
+                    "description": "",
+                    "secure": false
+                }
+            ]},
+            "templatePropSheet": {
+                "name": "template",
+                "properties": []
+            },
+            "baseResources": [{
+                "path": "\/WW Datacenters\/DC_EAST\/FRA_01\/2_TEST",
+                "id": "164d16ca-82e4-3b6d-7c59-4482e0ad0d8f"
+            }],
+            "componentPropSheets": [{
+                "properties": [],
+                "componentName": "DEMO"
+            }],
+            "versionConditions": [],
+            "teamMappings": []
+        },
+        {
+            "name": "INT",
+            "description": "",
+            "color": "#00B2EF",
+            "requireApprovals": false,
+            "noSelfApprovals": false,
+            "exemptProcesses": [],
+            "lockSnapshots": false,
+            "requireSnapshots": false,
+            "cleanupDaysToKeep": 0,
+            "cleanupCountToKeep": 0,
+            "enableProcessHistoryCleanup": true,
+            "useSystemDefaultDays": true,
+            "historyCleanupDaysToKeep": 365,
+            "order": 3,
+            "active": true,
+            "propSheet": {"properties": [
+                {
+                    "name": "imageversion",
+                    "value": "1.${p:version.name}",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "ingressurl",
+                    "value": "int.demo.icp.cloud.com",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "kubename",
+                    "value": "mydemo-int",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "namespace",
+                    "value": "mydemo-int",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "nodeport",
+                    "value": "32331",
+                    "description": "",
+                    "secure": false
+                }
+            ]},
+            "templatePropSheet": {
+                "name": "template",
+                "properties": []
+            },
+            "baseResources": [{
+                "path": "\/WW Datacenters\/DC_EAST\/FRA_01\/3_INT",
+                "id": "164d16cb-9375-86c6-37f9-52c78da9a458"
+            }],
+            "componentPropSheets": [{
+                "properties": [],
+                "componentName": "DEMO"
+            }],
+            "versionConditions": [["OK in TEST"]],
+            "teamMappings": []
+        },
+        {
+            "name": "PROD",
+            "description": "",
+            "color": "#D9182D",
+            "requireApprovals": true,
+            "noSelfApprovals": false,
+            "exemptProcesses": [],
+            "lockSnapshots": false,
+            "requireSnapshots": true,
+            "cleanupDaysToKeep": 0,
+            "cleanupCountToKeep": 0,
+            "enableProcessHistoryCleanup": true,
+            "useSystemDefaultDays": true,
+            "historyCleanupDaysToKeep": 365,
+            "order": 4,
+            "active": true,
+            "propSheet": {"properties": [
+                {
+                    "name": "imageversion",
+                    "value": "1.${p:version.name}",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "ingressurl",
+                    "value": "demo.icp.cloud.com",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "kubename",
+                    "value": "mydemo-prod",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "namespace",
+                    "value": "mydemo-prod",
+                    "description": "",
+                    "secure": false
+                },
+                {
+                    "name": "nodeport",
+                    "value": "32332",
+                    "description": "",
+                    "secure": false
+                }
+            ]},
+            "templatePropSheet": {
+                "name": "template",
+                "properties": []
+            },
+            "approvalProcess": {"rootActivity": {
+                "edges": [
+                    {
+                        "to": "d66b199f76a1d0e97c8bb53deedc8a",
+                        "type": "ALWAYS",
+                        "value": ""
+                    },
+                    {
+                        "to": "73b0ae3ec268adc9fe31982f1becf0",
+                        "from": "d66b199f76a1d0e97c8bb53deedc8a",
+                        "type": "SUCCESS",
+                        "value": ""
+                    }
+                ],
+                "offsets": [
+                    {
+                        "name": "d66b199f76a1d0e97c8bb53deedc8a",
+                        "x": -60,
+                        "y": 230,
+                        "h": 70,
+                        "w": 230
+                    },
+                    {
+                        "name": "73b0ae3ec268adc9fe31982f1becf0",
+                        "x": -5,
+                        "y": 450,
+                        "h": 80,
+                        "w": 120
+                    }
+                ],
+                "layoutMode": "auto",
+                "type": "graph",
+                "name": "561e004e-640d-4878-bd38-86ffd401cf8e",
+                "children": [
+                    {
+                        "type": "finish",
+                        "name": "73b0ae3ec268adc9fe31982f1becf0",
+                        "children": []
+                    },
+                    {
+                        "roleRestrictionData": {
+                            "contextType": "APPLICATION",
+                            "roleRestrictions": [{"roleName": "Administrator"}]
+                        },
+                        "propDefs": [],
+                        "templateName": "ApprovalCreated",
+                        "commentRequired": false,
+                        "commentPrompt": "",
+                        "role": {},
+                        "type": "applicationApprovalTask",
+                        "name": "d66b199f76a1d0e97c8bb53deedc8a",
+                        "children": []
+                    }
+                ]
+            }},
+            "baseResources": [
+                {
+                    "path": "\/WW Datacenters\/DC_EAST\/FRA_01\/4_PROD",
+                    "id": "164d16cc-bfb3-e839-5a7d-d06c77aa0f4c"
+                },
+                {
+                    "path": "\/WW Datacenters\/DC_EAST\/FRA_02\/4_PROD",
+                    "id": "164d18e9-6365-5215-b792-bbe85f42885e"
+                }
+            ],
+            "componentPropSheets": [{
+                "properties": [],
+                "componentName": "DEMO"
+            }],
+            "versionConditions": [["OK in INT"]],
+            "teamMappings": []
+        }
+    ],
+    "statuses": [
+        {
+            "type": "VERSION",
+            "name": "OK in TEST",
+            "description": "",
+            "deleted": false,
+            "color": "#17AF4A",
+            "unique": false
+        },
+        {
+            "type": "VERSION",
+            "name": "OK in INT",
+            "description": "",
+            "deleted": false,
+            "color": "#DD731C",
+            "unique": false
+        }
+    ],
+    "processes": [{
+        "name": "deploy",
+        "description": "",
+        "inventoryManagementType": "AUTOMATIC",
+        "offlineAgentHandling": "PRE_EXECUTION_CHECK",
+        "rootActivity": {
+            "edges": [
+                {
+                    "to": "3be218635e4882bbc47ca3263743cc",
+                    "type": "ALWAYS",
+                    "value": ""
+                },
+                {
+                    "to": "a8ab2aa32c15beba7e2685afb3ac83",
+                    "from": "3be218635e4882bbc47ca3263743cc",
+                    "type": "SUCCESS",
+                    "value": ""
+                }
+            ],
+            "offsets": [
+                {
+                    "name": "a8ab2aa32c15beba7e2685afb3ac83",
+                    "x": -5,
+                    "y": 430,
+                    "h": 80,
+                    "w": 120
+                },
+                {
+                    "name": "3be218635e4882bbc47ca3263743cc",
+                    "x": -50,
+                    "y": 230,
+                    "h": 70,
+                    "w": 190
+                }
+            ],
+            "layoutMode": "auto",
+            "type": "graph",
+            "name": "4888446f-aa1c-45aa-b832-75a2fdb33fd7",
+            "children": [
+                {
+                    "type": "finish",
+                    "name": "a8ab2aa32c15beba7e2685afb3ac83",
+                    "children": []
+                },
+                {
+                    "componentName": "DEMO",
+                    "properties": [
+                        {
+                            "name": "maxIteration",
+                            "value": "-1"
+                        },
+                        {
+                            "name": "failFast",
+                            "value": "false"
+                        }
+                    ],
+                    "type": "componentEnvironmentIterator",
+                    "name": "3be218635e4882bbc47ca3263743cc",
+                    "children": [{
+                        "componentName": "DEMO",
+                        "status": "Active",
+                        "type": "inventoryVersionDiff",
+                        "name": "908b02f1-7588-4eb3-85e9-ece26e7233d4",
+                        "children": [{
+                            "componentProcessName": "deploy",
+                            "componentName": "DEMO",
+                            "allowFailure": false,
+                            "properties": {},
+                            "type": "componentProcess",
+                            "name": "Install: \"DEMO\"",
+                            "children": []
+                        }]
+                    }]
+                }
+            ]
+        },
+        "propDefs": [],
+        "versionPresets": []
+    }],
+    "genericProcesses": [],
+    "teamMappings": [],
+    "tags": [
+        {
+            "id": "164d7557-16cd-81a5-20e3-3bb4f08e5db9",
+            "name": "KUBERNETES",
+            "color": "#00B2EF",
+            "description": "",
+            "objectType": "Application"
+        },
+        {
+            "id": "164d755e-7f79-c0a4-42f5-fe73d76a54a9",
+            "name": "WAS Liberty",
+            "color": "#17AF4A",
+            "description": "",
+            "objectType": "Application"
+        },
+        {
+            "id": "164d7563-20b5-fcb7-2331-e0b8761690f9",
+            "name": "DEMO APP",
+            "color": "#FDB813",
+            "description": "",
+            "objectType": "Application"
+        }
+    ]
+}

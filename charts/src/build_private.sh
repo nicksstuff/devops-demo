@@ -10,10 +10,10 @@ rm ./index.yaml
 #-----------------------------------------------------------------------------------------------------------------
 #CREATE PACKAGES
 #-----------------------------------------------------------------------------------------------------------------
-helm package demoliberty
+helm package devops-demo
 
 #CREATE INDEX.YAML
-helm repo index --url https://raw.githubusercontent.com/niklaushirt/demoliberty/master/charts/stable/repo/stable/ ./
+helm repo index --url https://raw.githubusercontent.com/niklaushirt/devops-demo/master/charts/stable/repo/stable/ ./
 
 #-----------------------------------------------------------------------------------------------------------------
 #REMOVE PACKAGES in stable

@@ -1,4 +1,4 @@
-# Libery Simple Example
+# Libery DevOps Example
 
 This project contains a simple servlet application.
 
@@ -7,8 +7,8 @@ This project contains a simple servlet application.
 ```bash
 sudo apt-get remove git
 sudo apt-get install git
-git clone https://github.com/niklaushirt/demoliberty.git
-cd libertysimple/
+git clone https://github.com/niklaushirt/devops-demo.git
+cd devops-demo/
 mvn install
 sudo apt-get update
 sudo apt-get install maven
@@ -20,21 +20,18 @@ sudo apt-get install maven
 
 ```bash
 
-sudo rm -r demoliberty/
-git clone https://github.com/niklaushirt/demoliberty.git
-cd demoliberty/
-docker build -t demoliberty:1.0.0 docker_100
-docker build -t demoliberty:1.1.0 docker_110
-docker build -t demoliberty:1.2.0 docker_120
-docker build -t demoliberty:1.3.0 docker_130
+sudo rm -r devops-demo/
+git clone https://github.com/niklaushirt/devops-demo
+cd devops-demo/
+docker build -t devops-demo:1.0.0 docker_100
 
-docker run --rm -p 9080:9080 demoliberty:1.3.0
+docker run --rm -p 9080:9080 devops-demo:1.3.0
 ```
 
 ## Add HELM repository
 
 ```
-https://raw.githubusercontent.com/niklaushirt/demoliberty/master/charts/stable/repo/stable/
+https://raw.githubusercontent.com/niklaushirt/devops-demo/master/charts/stable/repo/stable/
 ```
 
 ## Running the application using the command-line
