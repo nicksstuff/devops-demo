@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 apiVersion: v1
 entries:
   devops-demo:
@@ -21,3 +22,6 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/devops-demo/master/charts/stable/repo/stable/devops-demo-1.0.0.tgz
     version: 1.0.0
 generated: 2018-07-27T13:16:34.964110515+02:00
+=======
+
+>>>>>>> 1449a6fb9655c8a978335846b86785a991a44b93
